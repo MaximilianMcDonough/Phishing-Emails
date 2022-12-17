@@ -22,40 +22,9 @@ def main():
     testIds = testingData[:, 0]
     testAtributes = testingData[:, 1:len(testingData)-1]
     
-    '''
-    treeModel = tree.DecisionTreeClassifier()
-    treeModel.fit(atributes, outputClasses)
+   
     
-    ranForestModel = RandomForestClassifier(n_estimators=250)
-    ranForestModel.fit(atributes, outputClasses)
-    
-    adiBoost = AdaBoostClassifier(n_estimators=500)
-    adiBoost.fit(atributes, outputClasses)
-    
-    extraRandom = ExtraTreesClassifier()
-    extraRandom.fit(atributes, outputClasses)
-    
-    
-    treeResults = treeModel.predict(testAtributes)
-    RanForestResults = ranForestModel.predict(testAtributes)
-    adiBoostResults = adiBoost.predict(testAtributes)
-    extraRandomResuts = extraRandom.predict(testAtributes)
-    
-    for i in range(10):
-        #trains model
-        #model = makeExtraRanEnsamble(atributes, outputClasses, 5)
-        model = RandomForestClassifier(n_estimators=250)
-        model.fit(atributes, outputClasses)
-        
-        # gets predicitns
-        predicitions = model.predict(testAtributes)
-        
-        # formats and writes submission file
-        fileName = 'RandomForest' + str(i) + '.csv'
-        submition(testIds, predicitions, fileName)
-    '''
-    # final solution 99% accuracy on test set
-    # creat the model
+    # creat the model using catboost
     model = CatBoostClassifier(iterations=3000,
                            learning_rate=1,
                            depth=3)
