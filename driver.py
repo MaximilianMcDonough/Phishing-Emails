@@ -40,21 +40,7 @@ def main():
     RanForestResults = ranForestModel.predict(testAtributes)
     adiBoostResults = adiBoost.predict(testAtributes)
     extraRandomResuts = extraRandom.predict(testAtributes)
-    '''
-    # creat the model
-    model = CatBoostClassifier(iterations=3000,
-                           learning_rate=1,
-                           depth=3)
-    # fit the model
-    model.fit(atributes, outputClasses)
     
-    # make predictions and makes the submition file
-    predicitions = model.predict(testAtributes)
-    fileName = '300.csv'
-    submition(testIds, predicitions, fileName)
-    
-    
-    '''
     for i in range(10):
         #trains model
         #model = makeExtraRanEnsamble(atributes, outputClasses, 5)
@@ -68,6 +54,22 @@ def main():
         fileName = 'RandomForest' + str(i) + '.csv'
         submition(testIds, predicitions, fileName)
     '''
+    # final solution 99% accuracy on test set
+    # creat the model
+    model = CatBoostClassifier(iterations=3000,
+                           learning_rate=1,
+                           depth=3)
+    # fit the model
+    model.fit(atributes, outputClasses)
+    
+    # make predictions and makes the submition file
+    predicitions = model.predict(testAtributes)
+    fileName = '300.csv'
+    submition(testIds, predicitions, fileName)
+    
+    
+
+    
 
 
 # splits the data into the atributes and the output class
