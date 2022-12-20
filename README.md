@@ -1,8 +1,7 @@
 # Phishing-Emails
 
 ## Project Aim
-The aim of this project is to find Phishing emails using the meta data of emails. Going forward I think that an NLP aproach, or a hybride between this and an NLP 
-aproach would preform better
+Using the meta data of email messages, this project aims to detect phishing emails. Going forward, I think that an NLP approach, or a hybrid approach of this and an NLP approach would be more effective.
 
 ## How it Works
-This project works by taking the meta data from emails and classifing the emails bettween phishing or not. The final aproach that I found was the best is uising catboost classifier. There is potential to improve on the time required for training and testing if you were to run this on the GPU, I found that my CPU was good enough for the size of data set used for training. However I would recomend a bigger training set so leveraging the GPU could be worth it. I have also attached my traing data, but as I've previously said I would recemend more data.
+I classified emails based on their meta data to determine if they were phishing or not in this project. As a final approach, I used Catboost to classify emails. Using the GPU would reduce the time it takes to train and test; my CPU was sufficient for the amount of data I used; if you used the GPU, the time would be reduced. If, however, you choose to expand on the training data I have attached, it may be worthwhile to leverage the GPU. In addition, I have attached my training data, but as I have previously stated, I recommend that more data be collected.
